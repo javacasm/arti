@@ -1,4 +1,4 @@
-#include "articulacion.hpp"
+#include "articulacion.h"
 
 int minBase=20;
 int maxBase=150;
