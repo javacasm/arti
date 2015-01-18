@@ -1,17 +1,21 @@
-class arti
+#include <Servo.h>
+
+class articulacion
 {
-  private:
+
+  public:
+  
+  int iPosicion;
+  articulacion(int pin,int minPos, int maxPos);
+  void  posicion(int iPos);
+  
+  
+protected:
   
   int iMinPos;
   int iMaxPos;
   int iPinServo;
   
   Servo servo;
-  public:
-  
-  int iPosicion;
-  arti(int pin,int minPos, int maxPos);
-  
-  
- void  posicion(int iPos);
-}
+
+};
