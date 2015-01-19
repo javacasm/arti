@@ -1,12 +1,12 @@
 #include <Servo.h>
-
+#include <Arduino.h>
 
 class articulacion
 {
 protected:
   
-  int iMinControl=0;
-  int iMaxControl=1023;
+  int iMinControl;
+  int iMaxControl;
 
 
   int iMinPos;
@@ -16,12 +16,14 @@ protected:
   Servo servo;
  
   int iPosicion;
-  
+
   public:
   
   
   articulacion(int pin,int minPos, int maxPos)
   {
+    iMinControl=0;
+    iMaxControl=1023;
     iMinPos=minPos;
   	iMaxPos=maxPos;
   	iPinServo=pin;
