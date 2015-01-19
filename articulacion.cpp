@@ -1,9 +1,3 @@
-//#include <articulacion.h>
+#include <articulacion.h>
 
 
-  
-
-  
-  
-
- 

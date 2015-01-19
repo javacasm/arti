@@ -10,7 +10,8 @@ protected:
   int iPinServo;
   
   Servo servo;
-  
+ 
+ 
   
   public:
   
@@ -24,12 +25,11 @@ protected:
   	servo.attach(iPinServo);
 
   };
-  void  posicion(int iPos) {
+  
+  
+  void  setPosicion(int iPos) {
   	iPosicion=iPos;
   	servo.write(iPosicion);
-  }
+  };
   
-  
-
-
 };
