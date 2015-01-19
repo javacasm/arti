@@ -41,6 +41,9 @@ protected:
   int setMiddle()
   {return setPosicion((iMinPos+iMaxPos)/2);};
 
+  int changePosicion(int iControl)
+  {	int delta=iControl-(iMaxControl-iMinControl)/2;
+  	setPosicion(iPosicion+delta/4);}
   int convertControlToPosition(int iControl)
   {return map(iControl,iMinControl,iMaxControl,iMinPos,iMaxPos);};
 

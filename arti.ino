@@ -4,7 +4,7 @@
 #include <bqLiquidCrystal.h>
 
 int minBase=20;
-int maxBase=150;
+int maxBase=160;
 
 articulacion cadera(12,minBase,maxBase);
 articulacion hombro(11,minBase,maxBase);
