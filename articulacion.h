@@ -11,14 +11,14 @@ protected:
   
   Servo servo;
  
- 
+  int iPosicion;
   
   public:
   
-  int iPosicion;
+  
   articulacion(int pin,int minPos, int maxPos)
   {
-      	iMinPos=minPos;
+    iMinPos=minPos;
   	iMaxPos=maxPos;
   	iPinServo=pin;
 
@@ -27,9 +27,20 @@ protected:
   };
   
   
-  void  setPosicion(int iPos) {
-  	iPosicion=iPos;
-  	servo.write(iPosicion);
+  int setMiddle()
+  {return setPosicion((iMinPos+iMaxPos)/2);};
+
+  int setPosicion(int iPos) {
+
+  	if((iPos<iMaxPos)&&(iPos>iMinPos))
+  	{
+  		iPosicion=iPos;
+  		servo.write(iPosicion);
+  	}
+
+  	return iPosicion;
   };
   
+  int getPosicion()
+  {return iPosicion;};
 };
