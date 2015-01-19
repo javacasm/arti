@@ -14,7 +14,7 @@ protected:
   int iPinServo;
   
   Servo servo;
- 
+  int iControl;
   int iPosicion;
 
   public:
@@ -25,10 +25,10 @@ protected:
     iMinControl=0;
     iMaxControl=1023;
     iMinPos=minPos;
-  	iMaxPos=maxPos;
-  	iPinServo=pin;
+    iMaxPos=maxPos;
+    iPinServo=pin;
 
-  	servo.attach(iPinServo);
+    servo.attach(iPinServo);
 
   };
   
@@ -46,17 +46,26 @@ protected:
 
   int setControl(int iControl)
   {return setPosicion(convertControlToPosition(iControl));};
-
+  
+  void infoPosition()
+  {  Serial.print(iPinServo);
+     Serial.print(",");
+     Serial.println(iPosicion);
+  }
+  
   int setPosicion(int iPos) 
   {
-
+     if(iPos!=iPosicion)
+     {
   	if((iPos<iMaxPos)&&(iPos>iMinPos))
   	{
   		iPosicion=iPos;
   		servo.write(iPosicion);
+                infoPosition();
+                
   	}
-
-  	return iPosicion;
+     }
+     return iPosicion;
   };
   
   int getPosicion()

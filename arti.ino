@@ -1,7 +1,7 @@
 #include "articulacion.h"
 #include <Servo.h>
-
-#include "bqLiquidCrystal.h"
+#include <Wire.h>
+#include <bqLiquidCrystal.h>
 
 int minBase=20;
 int maxBase=150;
@@ -17,7 +17,7 @@ LiquidCrystal lcd(0); //creamos un objeto LCD
 
 void setup()
 {
-
+  Serial.begin(9600);
    cadera.setMiddle();
    hombro.setMiddle(); 
    codo.setMiddle();
@@ -50,5 +50,6 @@ void checkControles()
 void loop()
 {
 checkControles();
+delay(200);
 }
 
